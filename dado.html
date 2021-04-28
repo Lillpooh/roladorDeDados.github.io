@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolador de dados</title>
+</head>
+
+<body>
+
+   
+
+    <div class="container">
+        <h1 class="page-title">
+           Rolador de DADOS
+        </h1>
+        <p class="page-subtitle">
+            -escolha o número de lados e o dado vai ser rolado- 
+        </p>
+        
+        <input class="txt" type="number" id="dDeDado" placeholder="Número de lados "> <br> <br> <br> 
+       
+        <input
+        class="botao"
+        type="button"
+        onclick="escolherDado();"
+        value="rolar"
+        >
+        
+        <input
+        class="botaoC"
+        type="button"
+        onclick="limparCampo();"
+        value="limpar"
+        >
+        
+  
+        <h2 id = "result">
+        </h2>
+        
+        
+     
+  
+    </div>
+  
+    <style>
+        
+        body {
+        font-family: 'Roboto Mono',monospace;
+        min-height: 600px;
+        background-image: url('https://cdn.discordapp.com/attachments/740014664733425796/825104354599501914/fundo.png');
+        background-color: #000000;
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        }
+      
+        .container {
+        text-align: center;
+        padding: 20px;
+        height: 100vh;
+        }
+      
+        .page-title {
+        color: #ffffff;
+        }
+      
+        .page-subtitle {
+        color: #ffffff;
+        margin-top: 5px;
+        }
+
+      .txt 
+        {
+        background-color: rgb(55, 33, 55);
+        border: rgb(10, 6, 14);
+        border-style: solid;
+        border-radius: 15px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        }
+
+      .botao {
+        background-color: rgb(44, 31, 55);
+        border: rgb(10, 6, 14);
+        border-style: solid;
+        border-radius: 15px;
+        color: rgb(157, 157, 157);
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        }
+      
+        h2 {
+          font-size: 40px;
+          
+         
+        }
+        
+        .dado {
+        width: 600px;
+        text-align: center;
+        position: center;
+        font: 'High Jersey';
+        }
+
+        .botaoC {
+        background-color: rgb(44, 31, 55);
+        border: rgb(10, 6, 14);
+        border-style: solid;
+        border-radius: 15px;
+        color: rgb(157, 157, 157);
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        
+        }
+
+       
+      </style>
+   <script>
+        //BOTAO 1
+        function escolherDado(){
+
+        var tipo =  document.getElementById("dDeDado").value; 
+        var resultado = parseInt(Math.random() * tipo + 1)
+        if (tipo == 0){resultado = "ERRO" }
+        document.getElementById("result").innerHTML = resultado
+        }
+       
+        //BOTAO 2
+        function limparCampo(){
+        
+          document.getElementById("dDeDado").value = ""
+          document.getElementById("result").innerHTML = ""
+        }
+    </script>
+    
+</body>
+</html>
